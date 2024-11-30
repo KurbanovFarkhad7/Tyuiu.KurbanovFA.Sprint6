@@ -9,7 +9,7 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task1.V5.Lib
             DataService ds = new DataService();
             double[] massive = new double[11];
             int count = 0;
-            for (double i = startValue; i <= stopValue; i += 1)
+            for (double i = startValue; i <= stopValue; i++)
             {
                 double x = -5 + i;
                 double result = CalculateFunction(x);
@@ -21,17 +21,7 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task1.V5.Lib
         }
         static double CalculateFunction(double x)
         {
-            double numerator = Math.Cos(2 * x);
-            double denominator = 2;
-            // Проверка на деление на ноль (хотя в данном случае деление на 2 невозможно, но для примера)
-            if (denominator == 0)
-            {
-                return 0;
-            }
-
-            return Math.Sin(x) + numerator / denominator - 1.5 * x;
+            return Math.Sin(x) + Math.Cos(2 * x) / 2 - 1.5 * x;
         }
-
-        
     }
 }
