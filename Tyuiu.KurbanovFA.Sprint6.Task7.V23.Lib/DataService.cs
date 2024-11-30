@@ -15,7 +15,7 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task7.V23.Lib
             // Заполнение массива из CSV
             for (int i = 0; i < lines.Length; i++)
             {
-                string[] values = lines[i].Split('\t'); // Если значения разделены запятыми, используйте ',' вместо '\t'
+                string[] values = lines[i].Split(','); // Если значения разделены запятыми, используйте ',' вместо '\t'
                 for (int j = 0; j < values.Length; j++)
                 {
                     array[i, j] = int.Parse(values[j]);
