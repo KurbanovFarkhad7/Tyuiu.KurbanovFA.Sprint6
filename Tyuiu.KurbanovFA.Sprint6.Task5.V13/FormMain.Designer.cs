@@ -28,19 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridViewResult_KFA = new DataGridView();
+            buttonResult_KFA = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResult_KFA).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridViewResult_KFA
+            // 
+            dataGridViewResult_KFA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewResult_KFA.Location = new Point(202, 63);
+            dataGridViewResult_KFA.Name = "dataGridViewResult_KFA";
+            dataGridViewResult_KFA.Size = new Size(240, 256);
+            dataGridViewResult_KFA.TabIndex = 0;
+            // 
+            // buttonResult_KFA
+            // 
+            buttonResult_KFA.Location = new Point(26, 192);
+            buttonResult_KFA.Name = "buttonResult_KFA";
+            buttonResult_KFA.Size = new Size(128, 76);
+            buttonResult_KFA.TabIndex = 1;
+            buttonResult_KFA.Text = "EEEEEE!";
+            buttonResult_KFA.UseVisualStyleBackColor = true;
+            buttonResult_KFA.Click += buttonResult_KFA_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(536, 450);
+            Controls.Add(buttonResult_KFA);
+            Controls.Add(dataGridViewResult_KFA);
             Name = "FormMain";
             Text = "Form1";
             Load += FormMain_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResult_KFA).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridViewResult_KFA;
+        private Button buttonResult_KFA;
     }
 }

@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint6;
+﻿using System.ComponentModel.DataAnnotations;
+using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.KurbanovFA.Sprint6.Task5.V13.Lib
 {
@@ -8,14 +9,14 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task5.V13.Lib
         {
             string pathTransfer = File.ReadAllText(path); //взяли путь
             string stringValues = pathTransfer.Replace(".", ","); //определили как строку, сменили .
-            string[] valueArray = stringValues.Split(); // Разделяем строку на отдельные элементы (по пробелам)
+            string[] valueArray = stringValues.Split(' '); // Разделяем строку на отдельные элементы (по пробелам)
             double[] result = new double[valueArray.Length];
 
             for (int i = 0; i < valueArray.Length; i++)
             {
                 if (Convert.ToDouble(valueArray[i]) < 10)
                 {
-                    result[i] += Math.Round(Convert.ToDouble((valueArray[i])), 3);
+                    result[i] = Math.Round(Convert.ToDouble((valueArray[i])), 3);
                 }
                 Console.WriteLine(valueArray[i]);
             }
