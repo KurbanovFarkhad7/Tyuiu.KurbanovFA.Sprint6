@@ -7,18 +7,20 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task5.V13.Lib
     {
         public double[] LoadFromDataFile(string path)
         {
-            string pathTransfer = File.ReadAllText(path); //взяли путь
-            string stringValues = pathTransfer.Replace(".", ","); //определили как строку, сменили .
-            string[] valueArray = stringValues.Split(' '); // Разделяем строку на отдельные элементы (по пробелам)
-            double[] result = new double[valueArray.Length];
+            string stringValues = File.ReadAllText(path); //взяли путь
+            stringValues = stringValues.Replace(".", ","); //определили как строку, сменили .
+            string[] stringArray = stringValues.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            // Преобразуем строковый массив в массив чисел типа double
+            // Разделим строку на элементы по символу новой строки
+            double[] numbers = Array.ConvertAll(stringArray, s => double.Parse(s.Trim()));
+            double[] result = new double[numbers.Length];
 
-            for (int i = 0; i < valueArray.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if (Convert.ToDouble(valueArray[i]) < 10)
+                if (numbers[i] < 10)
                 {
-                    result[i] = Math.Round(Convert.ToDouble((valueArray[i])), 3);
+                    result[i] = numbers[i];
                 }
-                Console.WriteLine(valueArray[i]);
             }
             return result;
         }
