@@ -6,22 +6,17 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task3.V12.Lib
     {
         public int[,] Calculate(int[,] matrix)
         {
-            int[,] resultMatrix = new int[5,5];
             for (int y = 0; y < matrix.GetLength(0); y++)
             {
                 for (int x = 0; x < matrix.GetLength(1); x++)
                 {
                     if (y <= 0 && matrix[y, x] % 2 == 0)
                     {
-                        resultMatrix[y,x] = 0;
-                    }
-                    else
-                    {
-                        resultMatrix[y,x] = matrix[y, x];
+                        matrix[y, x] = 0;
                     }
                 }
             }
-            return resultMatrix;
+            return matrix;
         }
     }
 }
