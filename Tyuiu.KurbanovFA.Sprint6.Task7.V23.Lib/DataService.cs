@@ -6,11 +6,8 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            // Путь к вашему файлу CSV
-            string filePath = "path_to_your_file.csv";
-
             // Чтение всех строк из файла
-            string[] lines = File.ReadAllLines(filePath);
+            string[] lines = File.ReadAllLines(path);
 
             // Создаем двумерный массив для хранения данных
             int[,] array = new int[10, 10];
