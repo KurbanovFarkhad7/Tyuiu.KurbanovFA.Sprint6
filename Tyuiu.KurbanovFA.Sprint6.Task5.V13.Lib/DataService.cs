@@ -12,16 +12,8 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task5.V13.Lib
             string[] stringArray = stringValues.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             // Преобразуем строковый массив в массив чисел типа double
             // Разделим строку на элементы по символу новой строки
-            double[] numbers = Array.ConvertAll(stringArray, s => double.Parse(s.Trim()));
-            double[] result = new double[numbers.Length];
-
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                if (numbers[i] < 10)
-                {
-                    result[i] = numbers[i];
-                }
-            }
+            double[] numbers = Array.ConvertAll(stringArray, s => double.Parse(s.Trim())); //уже массив с конвертированной строкой
+            double[] result = numbers.Where(n => n < 10).ToArray();
             return result;
         }
     }
