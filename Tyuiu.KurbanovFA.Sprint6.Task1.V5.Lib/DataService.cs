@@ -9,19 +9,13 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task1.V5.Lib
             DataService ds = new DataService();
             double[] massive = new double[11];
             int count = 0;
-            for (double i = startValue; i <= stopValue; i++)
+            for (double x = startValue; x <= stopValue; x++)
             {
-                double x = -5 + i;
-                double result = CalculateFunction(x);
-                // Вычисляем значение функции, добавляем проверку на деление на 0
+                double result = Math.Sin(x) + (Math.Cos(2 * x) / 2) - 1.5 * x;
                 massive[count] = Math.Round(result, 2);
                 count++;
             }
             return massive;
-        }
-        static double CalculateFunction(double x)
-        {
-            return Math.Sin(x) + Math.Cos(2 * x) / 2 - 1.5 * x;
         }
     }
 }
