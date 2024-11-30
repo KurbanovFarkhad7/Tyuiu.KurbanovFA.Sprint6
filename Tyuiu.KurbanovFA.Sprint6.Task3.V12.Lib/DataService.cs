@@ -13,11 +13,15 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task3.V12.Lib
                 {
                     if (matrix[y, x] == 0 && y <= 1)
                     {
-                        matrix[y, x] = 0;
+                        resultMatrix[y,x] = 0;
+                    }
+                    else
+                    {
+                        resultMatrix[y,x] = matrix[y, x];
                     }
                 }
             }
-            return matrix;
+            return resultMatrix;
         }
     }
 }
