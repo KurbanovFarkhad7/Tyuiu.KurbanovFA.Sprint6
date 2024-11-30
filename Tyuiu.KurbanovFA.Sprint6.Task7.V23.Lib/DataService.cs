@@ -6,9 +6,6 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            string stringValues = File.ReadAllText(path); //взяли путь
-            stringValues = stringValues.Replace(".", ","); //определили как строку, сменили .
-
             int[,] array = new int[10, 10];
 
             using (StreamReader sr = new StreamReader(path))
