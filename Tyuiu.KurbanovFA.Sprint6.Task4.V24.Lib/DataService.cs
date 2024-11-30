@@ -11,7 +11,7 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task4.V24.Lib
             double result = 0;
             for (double x = startValue; x <= stopValue; x++)
             {
-                result = x + 1.2 != 0 ? (Math.Sin(x) / (x + 3.2)) - Math.Sin(x) * 2 - 2 * x : 0;
+                result = x + 1.2 != 0 ? (Math.Sin(x) / (x + 1.2)) - Math.Sin(x) * 2 - 2 * x : 0;
                 massive[count] = Math.Round(result, 2);
                 count++;
             }

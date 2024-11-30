@@ -11,7 +11,7 @@ public class DataServiceTest
         DataService ds = new DataService();
         int startValue = -5; int stopValue = 5;
         double[] res = ds.GetMassFunction(startValue, stopValue);
-        double[] wait = { -32.26, -27.5, -22.8, -17.95, -12.97, -9, -0.31, 3.77, 8.57, 13.42, 18.28 };
+        double[] wait = { 7.83, 6.22, 6.36, 6.96, -0.52, 0.0, -3.3, -5.53, -6.25, -6.63, -8.24 };
         CollectionAssert.AreEqual(wait, res);
     }
 }
