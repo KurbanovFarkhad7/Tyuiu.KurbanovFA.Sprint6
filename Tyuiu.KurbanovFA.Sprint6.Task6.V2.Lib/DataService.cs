@@ -23,7 +23,7 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task6.V2.Lib
                     result += words[1] + " ";
                 }
             }
-            return result;
+            return result.TrimEnd();
         }
     }
 }
