@@ -6,27 +6,33 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task7.V23.Lib
     {
         public int[,] GetMatrix(string path)
         {
+            // Путь к вашему файлу CSV
+            string filePath = "path_to_your_file.csv";
+
+            // Чтение всех строк из файла
+            string[] lines = File.ReadAllLines(filePath);
+
+            // Создаем двумерный массив для хранения данных
             int[,] array = new int[10, 10];
 
-            using (StreamReader sr = new StreamReader(path))
+            // Заполнение массива из CSV
+            for (int i = 0; i < lines.Length; i++)
             {
-                int row = 0;
-
-                // Читаем построчно
-                while (!sr.EndOfStream && row < 10)
+                string[] values = lines[i].Split('\t'); // Если значения разделены запятыми, используйте ',' вместо '\t'
+                for (int j = 0; j < values.Length; j++)
                 {
-                    string line = sr.ReadLine();
-                    string[] values = line.Split('\t'); // Используем табуляцию или пробел как разделитель
-
-                    // Преобразуем строку в целые числа и заполняем массив
-                    for (int col = 0; col < 10; col++)
-                    {
-                        array[row, col] = int.Parse(values[col].Trim());
-                    }
-                    row++;
+                    array[i, j] = int.Parse(values[j]);
                 }
-                return array;
             }
+            // Изменение значений в последнем столбце
+            for (int i = 0; i < 10; i++)
+            {
+                if (array[i, 9] < 2)  // Индекс 9 - это последний столбец
+                {
+                    array[i, 9] = 2;
+                }
+            }
+            return array;
         }
     }
 }
