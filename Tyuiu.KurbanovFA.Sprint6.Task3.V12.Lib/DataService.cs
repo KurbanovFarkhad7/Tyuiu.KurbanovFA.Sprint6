@@ -11,7 +11,7 @@ namespace Tyuiu.KurbanovFA.Sprint6.Task3.V12.Lib
             {
                 for (int x = 0; x < matrix.GetLength(1); x++)
                 {
-                    if (y <= 0 && matrix[y, x] == 0)
+                    if (y <= 0 && matrix[y, x] % 2 == 0)
                     {
                         resultMatrix[y,x] = 0;
                     }
